@@ -1,0 +1,26 @@
+.dialogs {
+  display: grid;
+  grid-template-columns: 4fr 8fr;
+  padding: 40px;
+}
+
+.dialogItems {
+  border-right: 2px solid #ced4da;
+  a {
+    display: flex;
+    align-content: center;
+
+  }
+
+  a:hover {
+    color: #abaeab;
+  }
+}
+
+.messages {
+  padding-left: 15px;
+}
+
+.message {
+
+}

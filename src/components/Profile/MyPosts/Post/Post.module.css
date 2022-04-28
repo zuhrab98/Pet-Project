@@ -1,0 +1,14 @@
+.item {
+    
+}
+
+.itemAvatar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.itemAvatar img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
