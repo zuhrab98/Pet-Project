@@ -1,17 +1,21 @@
 import React from "react";
 import styles from './MyPosts.module.css'
 import {Post} from './Post/Post'
+import {addPostActionCreator, updatePostTextActionCreator} from "../../../redux/state";
+
+
+
 
 export const MyPosts = ({profilePage, dispatch}) => {
     // получаем данные из inputa
     let newPosctElem = React.createRef()
 
     const addPostOnClick = () => {
-        dispatch({type: 'ADD POST'})
+        dispatch(addPostActionCreator())
     }
 
     const onPostChange = () => {
-        dispatch({type: 'UPDATE POST TEXT', newText: newPosctElem.current.value})
+        dispatch(updatePostTextActionCreator(newPosctElem.current.value))
     }
 
     return (
@@ -19,9 +23,9 @@ export const MyPosts = ({profilePage, dispatch}) => {
             <div className={styles.myPost}>
                 <h4>My posts</h4>
                 <input ref={newPosctElem} className={`${styles.myPostInput} d-block mb-10`} type="text"
-                       // при изминении inputa мы в state добовляем тот текст который напичатали
+                    // при изминении inputa мы в state добовляем тот текст который напичатали
                        onChange={onPostChange}
-                       // Значение приходит из state
+                    // Значение приходит из state
                        value={profilePage.newPostText}
                        placeholder='your news...'/>
 

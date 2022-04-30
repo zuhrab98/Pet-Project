@@ -1,7 +1,7 @@
 import {MyPosts} from './MyPosts/MyPosts'
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
 
-export const Profile = ({store}) => {
+export const Profile = ({store, addPostActionCreator, updatePostTextActionCreator}) => {
     return (
         <div>
             <ProfileInfo/>

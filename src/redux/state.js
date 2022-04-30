@@ -1,3 +1,6 @@
+const AddPost = 'ADD POST';
+const UpdatePostText = 'UPDATE POST TEXT';
+
 export const store = {
     _renderEntireTree() {
         console.log('State changed')
@@ -45,7 +48,7 @@ export const store = {
     },
 
     dispatch(action) { // { type: 'ADD POST', message: 'Hello }
-        if (action.type === 'ADD POST') {
+        if (action.type === AddPost) {
             if (this._state.profilePage.newPostText !== '') {
                 const newPost = {
                     id: '4',
@@ -57,7 +60,7 @@ export const store = {
                 this._renderEntireTree(this._state)
             }
 
-        } else if (action.type === 'UPDATE POST TEXT') {
+        } else if (action.type === UpdatePostText) {
             // При вызове Функция dispatch({ type: 'UPDATE POST TEXT', message: 'Hello })
             // добовляет в state новый текс и перерисовываем наше дерево
             this._state.profilePage.newPostText = action.newText
@@ -66,6 +69,19 @@ export const store = {
         }
     }
 
+}
+
+export const addPostActionCreator = () => {
+    return {
+        type: AddPost
+    }
+}
+
+export const updatePostTextActionCreator = (newPosctElem) => {
+    return {
+        type: UpdatePostText,
+        newText: newPosctElem
+    }
 }
 
 

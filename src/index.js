@@ -12,7 +12,7 @@ export function renderEntireTree() {
     root.render(
         <Router>
             <React.StrictMode>
-                <App  store={store} />
+                <App store={store}/>
             </React.StrictMode>
         </Router>
     );
