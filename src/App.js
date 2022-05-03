@@ -28,7 +28,7 @@ function App({store}) {
 
                     <Route exact path='/dialogs'
                            element={
-                               <Dialogs state={store.state.dialogsPage}/>
+                               <Dialogs store={store}/>
                            }>
                     </Route>
 

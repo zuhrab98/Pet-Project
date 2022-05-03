@@ -15,20 +15,6 @@
     color: #000;
 }
 
-.myPostInput {
-    width: 300px;
-    border: 1px solid #abaeab;
-    padding: 5px 15px;
-}
-
-.myPostBtn {
-    background: #8f918f;
-    border: none;
-    width: 100px;
-    line-height: 25px;
-    color: white;
-    cursor: pointer;
-}
 
 .avatar h5 {
     font-size: 20px;

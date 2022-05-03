@@ -46,6 +46,21 @@ body {
   }
 }
 
+.input {
+  width: 300px;
+  border: 1px solid #abaeab;
+  padding: 5px 15px;
+}
+
+.addBtn {
+  background: #8f918f;
+  border: none;
+  width: 110px;
+  line-height: 25px;
+  color: white;
+  cursor: pointer;
+}
+
 .app-wrapper__content {
   .description {
     font-size: 16px;

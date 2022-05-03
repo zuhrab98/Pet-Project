@@ -4,11 +4,11 @@ import {BrowserRouter as Router} from "react-router-dom";
 
 import 'macro-css'
 import App from "./App";
-import {store} from "./redux/state";
+import {store} from "./redux/redux-store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-export function renderEntireTree() {
+function renderEntireTree(store) {
     root.render(
         <Router>
             <React.StrictMode>
@@ -18,6 +18,10 @@ export function renderEntireTree() {
     );
 }
 
-renderEntireTree(store.state)
+renderEntireTree(store)
 
-store.subscribe(renderEntireTree)
+// При каждом изминении state у нас будет срабатывать подписка и
+// передовать новое значение state в аргументы
+store.subscribe(() => {
+    renderEntireTree(store)
+})
