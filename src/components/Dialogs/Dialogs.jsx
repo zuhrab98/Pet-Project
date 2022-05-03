@@ -4,26 +4,25 @@ import {Messages} from "./Messages/Messages";
 import {addMessageCreator, updateNewMessageCreator} from "../../redux/dialogs-reducer";
 
 
-export const Dialogs = ({store}) => {
-
-    const state = store.getState().dialogsPage
+export const Dialogs = ({dialogsPage, updateNewMessageCreator, addMessageCreator}) => {
 
     const onSendMessageClick = () => {
-        store.dispatch(addMessageCreator())
+        addMessageCreator()
     }
 
     const onMessageChange = (e) => {
-        store.dispatch(updateNewMessageCreator(e.target.value))
+        updateNewMessageCreator(e.target.value)
     }
 
     return (
         <div className={styles.dialogs}>
             <div className={styles.dialogItems}>
                 {
-                    state.dialogs.map(item => (<Dialog id={item.id} name={item.name}/>))
+                    dialogsPage.dialogs.map(item => (<Dialog id={item.id} name={item.name}/>))
                 }
                 <div>
-                    <input className='input d-block mb-10' onChange={onMessageChange} type="text" placeholder={'Enter your message'}/>
+                    <input className='input d-block mb-10' onChange={onMessageChange} type="text"
+                           placeholder={'Enter your message'}/>
                 </div>
                 <div>
                     <button className='addBtn' onClick={onSendMessageClick}>Add message</button>
@@ -33,7 +32,7 @@ export const Dialogs = ({store}) => {
             <div className={styles.messages}>
 
                 {
-                    state.messages.map(item => <Messages massage={item.message}/>)
+                    dialogsPage.messages.map(item => <Messages massage={item.message}/>)
 
                 }
 

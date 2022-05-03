@@ -1,11 +1,11 @@
-import {MyPosts} from './MyPosts/MyPosts'
 import {ProfileInfo} from "./ProfileInfo/ProfileInfo";
+import {MyPostsContainer} from "./MyPosts/MyPostsContainer";
 
 export const Profile = ({store}) => {
     return (
         <div>
             <ProfileInfo/>
-            <MyPosts profilePage={store.getState().profilePage} dispatch={store.dispatch}/>
+            <MyPostsContainer store={store}/>
         </div>
     )
 }

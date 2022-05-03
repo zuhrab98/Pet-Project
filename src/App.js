@@ -9,6 +9,7 @@ import {News} from "./components/News/News";
 
 import {Route, Routes} from "react-router-dom";
 import React from "react";
+import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
 
 
 function App({store}) {
@@ -28,7 +29,7 @@ function App({store}) {
 
                     <Route exact path='/dialogs'
                            element={
-                               <Dialogs store={store}/>
+                               <DialogsContainer store={store}/>
                            }>
                     </Route>
 
