@@ -17,7 +17,6 @@ const initialState = {
 }
 
 export const dialogsReducer = (state = initialState, action) => {
-    debugger
     switch (action.type) {
         case UPDATE_MESSAGE_BODY:
             state.newMessageBody = action.body

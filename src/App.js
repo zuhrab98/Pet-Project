@@ -22,14 +22,14 @@ function App({store}) {
 
                     <Route exact path='/profile'
                            element={
-                               <Profile store={store}/>
+                               <Profile/>
                            }>
 
                     </Route>
 
                     <Route exact path='/dialogs'
                            element={
-                               <DialogsContainer store={store}/>
+                               <DialogsContainer/>
                            }>
                     </Route>
 

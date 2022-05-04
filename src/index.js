@@ -5,15 +5,19 @@ import {BrowserRouter as Router} from "react-router-dom";
 import 'macro-css'
 import App from "./App";
 import {store} from "./redux/redux-store";
+import {MyContext} from "./MyContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function renderEntireTree(store) {
     root.render(
         <Router>
-            <React.StrictMode>
-                <App store={store}/>
-            </React.StrictMode>
+            <MyContext.Provider value={store}>
+                <React.StrictMode>
+                    <App/>
+                </React.StrictMode>
+            </MyContext.Provider>
+
         </Router>
     );
 }
