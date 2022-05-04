@@ -1,22 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import {BrowserRouter as Router} from "react-router-dom";
+import {Provider} from "react-redux";
 
 import 'macro-css'
 import App from "./App";
 import {store} from "./redux/redux-store";
-import {MyContext} from "./MyContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 function renderEntireTree(store) {
     root.render(
         <Router>
-            <MyContext.Provider value={store}>
+            <Provider store={store}>
                 <React.StrictMode>
                     <App/>
                 </React.StrictMode>
-            </MyContext.Provider>
+            </Provider>
 
         </Router>
     );
