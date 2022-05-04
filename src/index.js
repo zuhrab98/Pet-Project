@@ -9,7 +9,7 @@ import {store} from "./redux/redux-store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-function renderEntireTree(store) {
+// function renderEntireTree() {
     root.render(
         <Router>
             <Provider store={store}>
@@ -20,12 +20,12 @@ function renderEntireTree(store) {
 
         </Router>
     );
-}
+// }
 
-renderEntireTree(store)
+// renderEntireTree()
 
 // При каждом изминении state у нас будет срабатывать подписка и
 // передовать новое значение state в аргументы
-store.subscribe(() => {
-    renderEntireTree(store)
-})
+// store.subscribe(() => {
+//     renderEntireTree()
+// })

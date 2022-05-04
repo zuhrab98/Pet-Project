@@ -6,6 +6,7 @@ export const MyPosts = ({updateNewPostText, addPost, posts, newPostText}) => {
 
     const onAddPost = () => {
         addPost()
+        console.log(addPost())
     }
 
     const onPostChange = (e) => {

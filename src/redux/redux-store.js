@@ -14,3 +14,5 @@ export const store = configureStore({
         profilePage: profileReducer
     }
 })
+
+window.store = store

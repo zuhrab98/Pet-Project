@@ -1,17 +1,16 @@
 import styles from './Dialogs.module.scss'
 import {Dialog} from "./Dialog/Dialog";
 import {Messages} from "./Messages/Messages";
-import {addMessageCreator, updateNewMessageCreator} from "../../redux/dialogs-reducer";
 
 
-export const Dialogs = ({dialogsPage, updateNewMessageCreator, addMessageCreator}) => {
+export const Dialogs = ({dialogsPage, updateNewMessage, addMessage}) => {
 
     const onSendMessageClick = () => {
-        addMessageCreator()
+        addMessage()
     }
 
     const onMessageChange = (e) => {
-        updateNewMessageCreator(e.target.value)
+        updateNewMessage(e.target.value)
     }
 
     return (
