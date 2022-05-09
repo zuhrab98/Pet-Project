@@ -1,6 +1,7 @@
 import {dialogsReducer} from "./dialogs-reducer";
 import {profileReducer} from "./profile-reducer";
 import {configureStore} from "@reduxjs/toolkit";
+import {usersReducer} from "./users-reducer";
 
 // const thunk = require('redux-thunk')
 //
@@ -11,7 +12,8 @@ import {configureStore} from "@reduxjs/toolkit";
 export const store = configureStore({
     reducer: {
         dialogsPage: dialogsReducer,
-        profilePage: profileReducer
+        profilePage: profileReducer,
+        usersPage: usersReducer
     }
 })
 

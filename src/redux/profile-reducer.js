@@ -13,31 +13,29 @@ const initialState = {
 
 export const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST : {
-            const stateCopy = {...state}
+        case ADD_POST :
+            let newPost
             if (state.newPostText !== '') {
-                const newPost = {
+                newPost = {
                     id: '4',
                     message: state.newPostText,
                     likesCount: '3'
                 }
-                // Копируем объект state
-                stateCopy.posts = [...state.posts]
-                stateCopy.newPostText = state.newPostText
-
-                stateCopy.posts.push(newPost)
-                stateCopy.newPostText = ''
             }
-            return stateCopy
-        }
+            return {
+                ...state,
+                posts: [...state.posts, newPost],
+                newPostText: ''
+            }
 
-        case UPDATE_POST_TEXT: {
-            const stateCopy = {...state}
+        case UPDATE_POST_TEXT:
             // При вызове Функция dispatch({ type: 'UPDATE POST TEXT', message: 'Hello })
             // добовляет в state новый текс и перерисовываем наше дерево
-            stateCopy.newPostText = action.newText
-            return stateCopy
-        }
+            return {
+                ...state,
+                newPostText: action.newText
+            }
+
         default:
             return state
     }

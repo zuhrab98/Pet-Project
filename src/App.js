@@ -2,7 +2,6 @@ import './App.scss';
 import {Header} from './components/Header/Header';
 import {Navigation} from './components/Navigation/Navigation';
 import {Profile} from './components/Profile/Profile';
-import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Setting} from "./components/Setting/Setting";
 import {Music} from "./components/Music/Music";
 import {News} from "./components/News/News";
@@ -10,6 +9,7 @@ import {News} from "./components/News/News";
 import {Route, Routes} from "react-router-dom";
 import React from "react";
 import {DialogsContainer} from "./components/Dialogs/DialogsContainer";
+import {UsersContainer} from "./components/Users/UsersContainer";
 
 
 function App({store}) {
@@ -30,6 +30,12 @@ function App({store}) {
                     <Route exact path='/dialogs'
                            element={
                                <DialogsContainer/>
+                           }>
+                    </Route>
+
+                    <Route exact path={'/users'}
+                           element={
+                               <UsersContainer/>
                            }>
                     </Route>
 

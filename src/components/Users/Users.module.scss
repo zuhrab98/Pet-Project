@@ -1,0 +1,36 @@
+.user {
+  margin-bottom: 30px;
+}
+
+.userLeft {
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userRight{
+  width: 100%;
+  border-radius: 30px;
+  display: flex;
+  border: 1px solid #777d74;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.userBtn {
+  display: block;
+  width: 80px;
+  height: 30px;
+  background: transparent;
+  border: 1px solid #8f918f;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 28px;
+  cursor: pointer;
+}
+
+.location {
+  width: 115px;
+  font-size: 16px;
+}

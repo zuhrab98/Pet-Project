@@ -6,7 +6,6 @@ export const MyPosts = ({updateNewPostText, addPost, posts, newPostText}) => {
 
     const onAddPost = () => {
         addPost()
-        console.log(addPost())
     }
 
     const onPostChange = (e) => {
@@ -27,7 +26,7 @@ export const MyPosts = ({updateNewPostText, addPost, posts, newPostText}) => {
                 <button onClick={onAddPost} className='addBtn' type='submit'>Add Post</button>
             </div>
             <div className={styles.posts}>
-                {posts.map(item => <Post message={item.message} likesCount={item.likesCount}/>)}
+                {posts.map((item, index) => <Post key={index} message={item.message} likesCount={item.likesCount}/>)}
             </div>
         </div>
     )
