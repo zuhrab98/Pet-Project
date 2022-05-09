@@ -1,47 +1,37 @@
+import axios from "axios";
+
 import style from './Users.module.scss'
+import avatar from '../../images/11.png'
 
 
 export const Users = ({users, toggleFollow, setUsers}) => {
-    if (users.length === 0) {
-        setUsers(
-            [
-                {
-                    id: 1,
-                    photo: 'https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/11.png',
-                    followed: false,
-                    fullName: 'Alex.A.V',
-                    location: {city: 'Russia', country: 'Moscow'},
-                    status: 'I am so pretty'
-                },
-                {
-                    id: 2,
-                    photo: 'https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/11.png',
-                    followed: true,
-                    fullName: 'Islam.F.D',
-                    location: {city: 'Russia', country: 'Makhachkala'},
-                    status: 'I am so pretty'
-                },
-                {
-                    id: 3,
-                    photo: 'https://templates.iqonic.design/socialv/bs5/html/dist/assets/images/user/11.png',
-                    followed: false,
-                    fullName: 'Oleg.G.Z',
-                    location: {city: 'Russia', country: 'Yekaterinburg'},
-                    status: 'I am so pretty'
-                },
-            ]
-        )
+
+    const getUsers = () => {
+        debugger
+        if (users.length === 0) {
+
+            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+                console.log(response.data.items)
+                setUsers(
+                    response.data.items
+                )
+            })
+
+        }
     }
 
     return (
         <div className='p-40'>
+            <button onClick={getUsers}>Get Users</button>
             {users.map(user => {
                 return (
                     <div key={user.id} className={`${style.user} d-flex`}>
                         <div className={style.userLeft}>
                             <div>
                                 <div>
-                                    <img width={95} height={95} src={user.photo} alt="ava"/>
+                                    <img width={95} height={95}
+                                         src={user.photos.small ? user.photos.small : avatar}
+                                         alt="ava"/>
                                 </div>
                             </div>
                             <div>
@@ -54,14 +44,14 @@ export const Users = ({users, toggleFollow, setUsers}) => {
                         <div className={style.userRight}>
                             <div>
                                 <div className='mb-30'>
-                                    {user.fullName}
+                                    {user.name}
                                 </div>
                                 <div>
                                     {user.status}
                                 </div>
                             </div>
                             <div>
-                                <div className={style.location}>{user.location.city} {user.location.country}</div>
+                                <div className={style.location}>{'user.location.city'} {'user.location.country'}</div>
                             </div>
                         </div>
                     </div>
